@@ -14,7 +14,7 @@ export class AppComponent {
       firstname: new FormControl(''),
       lastname: new FormControl(''),
       email: new FormControl(''),
-      addresse: new FormGroup({
+      address: new FormGroup({
         street: new FormControl(''),
         postalCode: new FormControl(''),
         city: new FormControl('')
