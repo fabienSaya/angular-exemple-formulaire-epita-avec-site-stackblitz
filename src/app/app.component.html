@@ -12,8 +12,23 @@
     <label>Email: </label>
     <input formControlName="email" type="text" />
   </div>
+  <div formGroupName="addresse">
+    <label>Adresse: </label>
+    <div>
+      <input formControlName="street" type="text" />
+    </div>
+    <div>
+      <input formControlName="postalCode" type="text" />
+    </div>
+    <div>
+      <input formControlName="city" type="text" />
+    </div>
+  </div>
 
   <button type="submit">Envoyer</button>
 </form>
+
+<!-- on voit que le userForm est réactif: les valeurs se mettent à jour directement-->
+<pre>{{ userForm.value | json }}</pre>
 
 <button (click)="setForm()">SetForm</button>
