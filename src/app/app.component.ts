@@ -15,6 +15,7 @@ export class AppComponent {
       firstname: new FormControl('', [
         Validators.required,
         Validators.minLength(2),
+        Validators.maxLength(4),
       ]),
       lastname: new FormControl(''),
       email: new FormControl('', Validators.email),
@@ -43,3 +44,4 @@ export class AppComponent {
     this.userForm.controls.email.setValue('Fabien@hotmail.fr');
   }
 }
+
