@@ -4,7 +4,7 @@
     <label>Prénom: </label>
     <input formControlName="firstname" type="text" />
     <!-- on affiche les erreurs qu'après un premier submit-->
-    <div *ngIf='isSubmitted'>
+    <div *ngIf='userFormIsSubmitted'>
       <!-- le ? indique qu'on test si errors est présent. Si pas présent dans ce cas, ca retourne false, sinon il regarde si y'a minlength ensuite-->
       <p *ngIf="userForm.controls.firstname.errors?.minlength || userForm.controls.firstname.errors?.maxlength" class="error">Le champs prenom doit contenir entre 2 et 4 caractères</p>
       <p *ngIf='userForm.controls.firstname.errors?.required'class="error">Le champs est requis</p>
@@ -18,6 +18,7 @@
   <div>
     <label>Email: </label>
     <input formControlName="email" type="text" />
+    <p *ngIf='userForm.controls.email.errors?.email && userFormIsSubmitted'class="error">Le champs email est mal formaté</p>
   </div>
   <div formGroupName="address">
     <label>Adresse: </label>

@@ -8,7 +8,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class AppComponent {
   userForm: FormGroup;
-  isSubmitted: boolean;
+  userFormIsSubmitted: boolean;
 
   constructor() {
     this.userForm = new FormGroup({
@@ -26,12 +26,12 @@ export class AppComponent {
       }),
     });
 
-    this.isSubmitted = false;
+    this.userFormIsSubmitted = false;
     console.log(this.userForm);
   }
 
   onSubmitForm() {
-    this.isSubmitted = true;
+    this.userFormIsSubmitted = true;
     console.log(this.userForm.value);
     //check s'il est valide
     console.log(this.userForm.valid);
